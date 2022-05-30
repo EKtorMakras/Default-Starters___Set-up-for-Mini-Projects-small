@@ -1,0 +1,418 @@
+//* ------------------------------ Variables ------------------------------ *//
+
+
+//& --------------- COLORS --------------- //
+
+$colors :( // 
+
+
+
+    //% -------  Generic ------- //
+
+    "black-1":#000,
+    "white-1":#fff,
+
+    "red-dark": #842029,
+    "red-light": #f8d7da,
+
+    "grey-dark": #0f5132,
+    "green-light": #d1e7dd,
+
+
+    //% ------- ------- //
+
+
+
+    //% -------  Shades of Grey ------- //
+
+    /* General ones */
+
+    "grey-generic-1":#777,
+    "grey-generic-2":#999,
+    "grey-generic-3":#333,
+
+
+
+    /* darkest grey - used for headings */
+    "grey-dark-1": #0f172a,
+    "grey-dark-2": #1e293b,
+    "grey-dark-3": #102a42,
+    "grey-dark-4": #243a52,
+    "grey-dark-5": #334155,
+    "grey-dark-6": #324d67,
+    "grey-dark-7": #475569,
+
+
+
+    /* lighter grey - used for paragraphs */
+    "grey-light-1": #64748B,
+    "grey-light-2": #617d98,
+    "grey-light-3": #829ab0,
+    "grey-light-4": #94aeb8,
+    "grey-light-5": #bcccdc,
+    "grey-light-6": #dae2ec,
+    "grey-light-7": #e2e8f0,
+    "grey-light-8": #f1f5f9,
+    "grey-light-9": #f1f5f8,
+
+    //% ------- ------- //
+
+
+    //% -------  Primary Color ------- //
+
+    "primary":hsl(173, 58%, 39%),
+
+
+    "primary-light-3":hsl(173, 37%, 58%),
+
+
+    "primary-dark-3":hsl(172, 58%, 20%),
+
+
+    //% ------- ------- //
+
+
+
+    //% -------  Secondary Color ------- //
+
+    // "secondary":hsl(173, 58%, 39%),
+
+
+    // "secondary-light-3":hsl(173, 37%, 58%),
+
+
+    // "secondary-dark-3":hsl(172, 58%, 20%),
+
+
+    //% ------- ------- //
+
+
+    //% -------  Tertiary Color ------- //
+
+    // "tertiary":hsl(173, 58%, 39%),
+
+
+    // "tertiary-light-3":hsl(173, 37%, 58%),
+
+
+    // "tertiary-dark-3":hsl(172, 58%, 20%),
+
+
+    //% ------- ------- //
+
+);
+
+
+@function color ($color) {
+    @return map-get($colors, $color);
+}
+
+//& ----------------- ----------------- //
+
+
+
+//& --------------- FONTS --------------- //
+
+
+//% -------  Font Sizes ------- //
+
+$font-sizes :( // Text
+    "small-1":calc(1.1rem + .2vw),
+    "small-2":calc(1.2rem + .3vw),
+    "small-3":calc(1.3rem + .4vw),
+    "medium":calc(1.5rem + .4vw),
+    "big-1":calc(1.7rem + .6vw),
+    "big-2":calc(1.8rem + .7vw),
+    "big-3":calc(1.9rem + .9vw),
+    "big-4":calc(2rem + 1vw),
+
+
+    // Headings
+    "head-1":5.5rem,
+    "head-2":4.2rem,
+    "head-3":3.5rem,
+    "head-4":2.8rem,
+
+);
+
+@function font-size($font-size-style) {
+    @return map-get($font-sizes, $font-size-style);
+}
+
+
+//% -------  Font Weights ------- //
+
+$font-weights: ( // 
+    "thin": 100,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+    "black": 900,
+);
+
+@function font-weight($font-weight-style) {
+    @return map-get($font-weights, $font-weight-style);
+}
+
+
+
+//% -------  Font Families ------- //
+
+$ff-primary: "Lato",
+sans-serif;
+$ff-secondary : Arial,
+Helvetica,
+sans-serif;
+
+//& ----------------- ----------------- //
+
+
+
+//& --------------- SHADOWS --------------- //
+
+$shadows :( // 
+
+    shadow-sm-1 : 0 .125rem .25rem rgba(color(black-1), .075),
+    shadow-sm-2 : 0 .15rem .28rem rgba(color(black-1), .1),
+    shadow-sm-3 : 0 .2rem .3rem rgba(color(black-1), .12),
+
+
+    shadow-rg-1 : 0 .4rem .8rem rgba(color(black-1), .15),
+    shadow-rg-2 : 0 .5rem 1rem rgba(color(black-1), .15),
+    shadow-rg-3 : 0 .7rem 1.2rem rgba(color(black-1), .17),
+
+
+    shadow-lg-1 : 0 1rem 2.5rem rgba(color(black-1), .175),
+    shadow-lg-2 : 0 1rem 3rem rgba(color(black-1), .19),
+    shadow-lg-3 : 0 1.3rem 3rem rgba(color(black-1), .2),
+
+);
+
+
+@function shadow ($shadow) {
+    @return map-get($shadows, $shadow);
+}
+
+//& ----------------- ----------------- //
+
+
+
+
+//& --------------- OTHER --------------- //
+
+$spacing: 2.5px;
+$radius:3px;
+$transition:all .3s ease;
+$max-width: 1170px;
+
+//& ----------------- ----------------- //
+
+
+//* ------------------------------  ------------------------------ *//
+
+
+
+
+
+//* ------------------------------ Mixins ------------------------------ *//
+
+
+
+//% ------ General ------ //
+
+// Clearfix
+@mixin clearfix {
+
+    &::after,
+    &::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+// Transition
+@mixin transition($time, $function) {
+    transition: all $time $function;
+}
+
+
+// Flexbox
+@mixin flex($direction:row, $justifycontent:center, $alignitems:center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignitems;
+}
+
+
+// Pseudo element
+@mixin pseudo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: $transition;
+}
+
+//% ------  ------ //
+
+
+
+//% --- Center an element --- //
+
+// Center with position //
+@mixin center-pos {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Center with flexbox //
+@mixin center-flex {
+    display: flex;
+    place-items: center;
+    text-align: center;
+}
+
+
+// Center with margins //
+@mixin center-mar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//% ------  ------ //
+
+
+
+//% ---------- Media Queries ---------- //
+
+//@ ----- All Widths ----- //
+
+@mixin media-min ($width) {
+    @media screen and (min-width:$width) {
+        @content;
+    }
+}
+
+@mixin media-max ($width) {
+    @media screen and (max-width:$width) {
+        @content;
+    }
+}
+
+@mixin media-min-max($min-width, $max-width) {
+    @media screen and (min-width:$min-width) and (max-width:$max-width) {
+        @content;
+    }
+}
+
+//@ -----  ----- //
+
+
+
+//@ ----- Custom Widths ----- //
+
+$break-points: ( // 
+    "phone-small": 400px,
+    "phone-big": 600px,
+    "tablet-port": 800px,
+    "tablet-land": 1000px,
+    "desktop": 1300px,
+    "desktop-big": 1800px);
+
+
+@function break-points($break-point-limit) {
+    @return map-get($break-points, $break-point-limit);
+}
+
+
+
+@mixin respond($breakpoint) {
+
+    // 400px
+    @if $breakpoint==phone-small {
+        @media screen and (max-width:break-points(phone-small)) {
+            @content;
+        }
+    }
+
+
+    // 600px
+    @if $breakpoint==phone-big {
+        @media screen and (max-width:break-points(phone-big)) {
+            @content;
+        }
+    }
+
+
+    // 800px
+    @if $breakpoint==tab-port {
+        @media screen and (max-width:break-points(tab-port)) {
+            @content;
+        }
+    }
+
+
+    // 1000px
+    @if $breakpoint==tab-land {
+        @media screen and (min-width:break-points(tab-land)) {
+            @content;
+        }
+    }
+
+
+    // 1300px
+    @if $breakpoint==desktop {
+        @media screen and (min-width:break-points(desktop)) {
+            @content;
+        }
+    }
+
+
+    // 1800px
+    @if $breakpoint==desktop-big {
+        @media screen and (min-width:break-points(desktop-big)) {
+            @content;
+        }
+    }
+}
+
+//@ -----  ----- //
+
+
+//% ----------   ---------- //
+
+//* ------------------------------  ------------------------------ *//
+
+
+
+
+
+
+// ----------------------------------- Comments ----------------------------------- //
+
+//* ------------------------------ Header ------------------------------ *//
+//* ------------------------------ End Of Header ------------------------------ *//
+
+//$ ---------------- Showcase/Hero Section ---------------- $//
+//$ ---------------- End Of Showcase/Hero Section ---------------- $//
+
+//& ---------- Hero ---------- //
+//& ---------- End Of Hero ---------- //
+
+//% ------ Hero ------ //
+//% ------ End Of Hero ------ //
+
+//# ---- Hero ---- //
+//# ---- End Of Hero ---- //
+
+//^ -- Hero -- //
+//^ -- End Of Hero -- //

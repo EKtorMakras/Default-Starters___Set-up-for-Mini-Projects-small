@@ -1,0 +1,184 @@
+/* General ones */
+/* darkest grey - used for headings */
+/* lighter grey - used for paragraphs */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+  line-height: 1.8;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 100;
+  color: #243a52;
+}
+
+h2 {
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: #324d67;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #243a52;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #243a52;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #617d98;
+  margin-bottom: 1.25rem;
+}
+
+body {
+  padding: 3rem;
+}
+
+.container {
+  padding: 2rem 6rem;
+  border: 2px solid #324d67;
+  background-color: #bcccdc;
+}
+
+.heading--main {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.heading--main::after {
+  content: '';
+  display: block;
+  margin-top: 2rem;
+  width: 100%;
+  height: 1px;
+  background-color: #777;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(35rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  -webkit-column-gap: 4rem;
+          column-gap: 4rem;
+  row-gap: 8rem;
+}
+
+.project {
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  min-height: 35rem;
+}
+
+.project-title {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.project-title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(194, 143, 4, 0.945);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+}
+
+.project-comment {
+  color: #617d98;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+/*# sourceMappingURL=style.css.map */

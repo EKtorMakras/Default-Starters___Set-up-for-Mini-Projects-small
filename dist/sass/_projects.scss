@@ -1,0 +1,123 @@
+//* -------- Generic -------- * //
+
+body {
+    padding: 3rem;
+}
+
+
+.container {
+    padding: 2rem 6rem;
+    border: 2px solid $clr-grey-3;
+    background-color: $clr-grey-8;
+}
+
+
+.heading {
+
+    &--main {
+        text-align: center;
+        margin-bottom: 5rem;
+
+        &::after {
+            content: '';
+            display: block;
+            margin-top: 2rem;
+            width: 100%;
+            height: 1px;
+            background-color: $clr-grey-dark-1;
+            @include center-mar;
+        }
+    }
+}
+
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    column-gap: 4rem;
+    row-gap: 8rem;
+}
+
+
+.project {
+    padding: 2rem 2.5rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 35rem;
+
+
+    &-title {
+        text-transform: capitalize;
+        text-align: center;
+        // margin-bottom: 1rem;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: hsla(44, 96%, 39%, 0.945);
+            @include center-mar;
+            margin-top: 1.5rem;
+        }
+    }
+
+
+    &-comment {
+        color: $clr-grey-5;
+        text-align: center;
+        font-style: italic;
+        font-size: 1.8rem;
+    }
+}
+
+
+//* --------  -------- * //
+
+
+
+
+//* ------------------------- Flipping Cards ------------------------- *//
+
+
+//$ --------------- Project 1 --------------- $//
+
+
+
+
+
+//$ --------------- End Of Project 1 --------------- $//
+
+
+
+//$ --------------- Project 1 --------------- $//
+//$ --------------- End Of Project 1 --------------- $//
+
+
+
+//$ --------------- Project 1 --------------- $//
+//$ --------------- End Of Project 1 --------------- $//
+
+
+
+//$ --------------- Project 1 --------------- $//
+//$ --------------- End Of Project 1 --------------- $//
+
+
+//* ------------------------- End Of Flipping Cards ------------------------- *//
+
+
+
+//* ------------------------- Flipping Cards ------------------------- *//
+
+//$ --------------- Project 1 --------------- $//
+//$ --------------- End Of Project 1 --------------- $//
+
+
+
+//$ --------------- Project 1 --------------- $//
+//$ --------------- End Of Project 1 --------------- $//
+
+//* ------------------------- End Of Flipping Cards ------------------------- *//

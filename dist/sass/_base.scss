@@ -1,0 +1,118 @@
+//& ---------- Resets ---------- //
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    font-size: 62.5%;
+
+
+    //# ---- Media ---- //
+
+    @include respond (desktop-big) {
+        font-size: 75%; // 1rem = 12px //
+    }
+
+    @include respond (tab-land) {
+        font-size: 56.25%; // 1rem = 9px //
+    }
+
+    @include respond (tab-port) {
+        font-size: 50%; // 1rem = 8px //
+    }
+
+    @include respond (phone-big) {
+        font-size: 43.75%; // 1rem = 7px //
+    }
+
+    //# ---- ---- //
+}
+
+//& ----------  ---------- //
+
+
+
+//& ---------- Generic Styles ---------- //
+
+
+body {
+    font-family: $ff-primary;
+    font-size: font-size(medium);
+    font-weight: font-weight(regular);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+a {
+    text-decoration: none;
+    transition: $transition;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+p {
+    font-size: font-size(medium);
+    line-height: 1.7;
+    color: color(grey-light-2);
+    margin-bottom: 1.25rem;
+    max-width: 40em;
+}
+
+
+//^ --- Headings --- //
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: $spacing;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: color(grey-dark-3);
+}
+
+
+h1 {
+    font-size: font-size(head-1);
+    font-weight: font-weight(thin);
+}
+
+
+h2 {
+    font-size: font-size(head-2);
+    font-weight: font-weight(light);
+}
+
+
+h3 {
+    font-size: font-size(head-3);
+    font-weight: font-weight(light);
+}
+
+h4 {
+    font-size: font-size(head-4);
+    font-weight: font-weight(light);
+}
+
+//^ ---  --- //
