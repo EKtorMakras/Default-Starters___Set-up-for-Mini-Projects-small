@@ -1,5 +1,7 @@
-//& ---------- Resets ---------- //
+@use 'abstracts' as *;
 
+
+//% ***************  Resets  *************** //
 
 *,
 *::after,
@@ -35,17 +37,17 @@ html {
     //# ---- ---- //
 }
 
-//& ----------  ---------- //
+//% ***************    *************** //
 
 
 
-//& ---------- Generic Styles ---------- //
 
+//% ***************  Generic Styles  *************** //
 
 body {
     font-family: $ff-primary;
-    font-size: font-size(medium);
-    font-weight: font-weight(regular);
+    font-size: fs(rg);
+    font-weight: fw(regular);
     line-height: 1.5;
     overflow-x: hidden;
 }
@@ -70,11 +72,11 @@ img {
 
 
 p {
-    font-size: font-size(medium);
+    font-size: fs(rg);
     line-height: 1.7;
     color: color(grey-light-2);
     margin-bottom: 1.25rem;
-    // max-width: 40em;
+    max-width: 40em;
 }
 
 
@@ -94,25 +96,68 @@ h4 {
 
 
 h1 {
-    font-size: font-size(head-1);
-    font-weight: font-weight(thin);
+    font-size: fs(head-1);
+    font-weight: fw(thin);
 }
 
 
 h2 {
-    font-size: font-size(head-2);
-    font-weight: font-weight(light);
+    font-size: fs(head-2);
+    font-weight: fw(light);
 }
 
 
 h3 {
-    font-size: font-size(head-3);
-    font-weight: font-weight(light);
+    font-size: fs(head-3);
+    font-weight: fw(light);
 }
 
 h4 {
-    font-size: font-size(head-4);
-    font-weight: font-weight(light);
+    font-size: fs(head-4);
+    font-weight: fw(light);
 }
 
 //^ ---  --- //
+
+//% ***************    *************** //
+
+
+
+
+//% ***************  Utilities  *************** //
+
+// center text
+.u-center-text {
+    text-align: center;
+}
+
+
+// section set-up
+.section {
+    padding: 5rem 0;
+
+
+    &-center {
+        width: 90vw;
+        margin: 0 auto;
+        max-width: 1170px;
+
+        @include media-min(992px) {
+            width: 95vw;
+        }
+    }
+
+
+    &-title {
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+}
+
+// container
+.container {
+    max-width: $max-width;
+}
+
+
+//% ***************    *************** //

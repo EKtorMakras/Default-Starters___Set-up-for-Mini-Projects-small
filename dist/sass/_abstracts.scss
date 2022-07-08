@@ -1,37 +1,32 @@
-//* ------------------------------ Variables ------------------------------ *//
+//* *****************************************    Variables   ***************************************** //
 
 
-//& --------------- COLORS --------------- //
+//& ********************************  Colors  ******************************** //
 
-$colors :( // 
+$colors: ( //
 
 
+    //% ***************  General  *************** //
 
-    //% -------  Generic ------- //
-
-    "black-1":#000,
-    "white-1":#fff,
+    "black-1": #000,
+    "white-1": #fff,
 
     "red-dark": #842029,
     "red-light": #f8d7da,
 
-    "grey-dark": #0f5132,
+    "green-dark": #0f5132,
     "green-light": #d1e7dd,
 
-
-    //% ------- ------- //
-
+    //% ***************    *************** //
 
 
-    //% -------  Shades of Grey ------- //
+
+    //% ***************  Shades of Grey  *************** //
 
     /* General ones */
-
-    "grey-generic-1":#777,
-    "grey-generic-2":#999,
-    "grey-generic-3":#333,
-
-
+    "grey-generic-1": #777,
+    "grey-generic-2": #999,
+    "grey-generic-3": #333,
 
     /* darkest grey - used for headings */
     "grey-dark-1": #0f172a,
@@ -42,200 +37,160 @@ $colors :( //
     "grey-dark-6": #324d67,
     "grey-dark-7": #475569,
 
-
-
     /* lighter grey - used for paragraphs */
-    "grey-light-1": #64748B,
+    "grey-light-1": #64748b,
     "grey-light-2": #617d98,
     "grey-light-3": #829ab0,
     "grey-light-4": #94aeb8,
     "grey-light-5": #bcccdc,
     "grey-light-6": #dae2ec,
     "grey-light-7": #e2e8f0,
-    "grey-light-8": #f1f5f9,
+    "grey-light-8": #eaf1f8,
     "grey-light-9": #f1f5f8,
 
-    //% ------- ------- //
-
-
-    //% -------  Primary Color ------- //
-
-    "primary":hsl(173, 58%, 39%),
-
-
-    "primary-light-3":hsl(173, 37%, 58%),
-
-
-    "primary-dark-3":hsl(172, 58%, 20%),
-
-
-    //% ------- ------- //
+    //% ***************    *************** //
 
 
 
-    //% -------  Secondary Color ------- //
+    //% ***************  Primary  *************** //
 
-    // "secondary":hsl(173, 58%, 39%),
+    "primary": hsl(173, 58%, 39%),
 
+    // Light Shades
+    "primary-light-1": hsl(173, 38%, 78%),
+    "primary-light-2": hsl(173, 37%, 73%),
+    "primary-light-3": hsl(173, 37%, 58%),
+    "primary-light-4": hsl(173, 39%, 49%),
+    "primary-light-5": hsl(173, 47%, 44%),
+    // Dark Shades
+    "primary-dark-1": hsl(173, 58%, 33%),
+    "primary-dark-2": hsl(172, 57%, 27%),
+    "primary-dark-3": hsl(172, 58%, 20%),
+    "primary-dark-4": hsl(171, 58%, 14%),
 
-    // "secondary-light-3":hsl(173, 37%, 58%),
-
-
-    // "secondary-dark-3":hsl(172, 58%, 20%),
-
-
-    //% ------- ------- //
-
-
-    //% -------  Tertiary Color ------- //
-
-    // "tertiary":hsl(173, 58%, 39%),
-
-
-    // "tertiary-light-3":hsl(173, 37%, 58%),
-
-
-    // "tertiary-dark-3":hsl(172, 58%, 20%),
-
-
-    //% ------- ------- //
-
+    //% ***************    *************** //
 );
 
-
-@function color ($color) {
+@function color($color) {
     @return map-get($colors, $color);
 }
 
-//& ----------------- ----------------- //
+//& ********************************  End Of Colors  ******************************** //
 
 
 
-//& --------------- FONTS --------------- //
+
+//& ********************************  Fonts  ******************************** //
 
 
-//% -------  Font Sizes ------- //
+//% ***************  Font-Size  *************** //
 
-$font-sizes :( // Text
-    "small-1":calc(1.1rem + .2vw),
-    "small-2":calc(1.2rem + .3vw),
-    "small-3":calc(1.3rem + .4vw),
-    "medium":calc(1.5rem + .4vw),
-    "big-1":calc(1.7rem + .6vw),
-    "big-2":calc(1.8rem + .7vw),
-    "big-3":calc(1.9rem + .9vw),
-    "big-4":calc(2rem + 1vw),
-
-
+$font-sizes: ( 
+    // Text
+    "sm-1": calc(1.1rem + 0.2vw),
+    "sm-2": calc(1.2rem + 0.3vw),
+    "sm-3": calc(1.3rem + 0.4vw),
+    "rg": calc(1.5rem + 0.4vw),
+    "lg-1": calc(1.7rem + 0.6vw),
+    "lg-2": calc(1.8rem + 0.7vw),
+    "lg-3": calc(1.9rem + 0.9vw),
+    "lg-4": calc(2rem + 1vw),
+    
     // Headings
-    "head-1":5.5rem,
-    "head-2":4.2rem,
-    "head-3":3.5rem,
-    "head-4":2.8rem,
+    "head-1": 5.5rem,
+    "head-2": 4.2rem,
+    "head-3": 3.5rem,
+    "head-4": 2.8rem);
 
-);
-
-@function font-size($font-size-style) {
+@function fs($font-size-style) {
     @return map-get($font-sizes, $font-size-style);
 }
 
+//% ***************    *************** //
 
-//% -------  Font Weights ------- //
 
-$font-weights: ( // 
+
+//% ***************  Font-Weight  *************** //
+
+$font-weights: ( //
     "thin": 100,
     "light": 300,
     "regular": 400,
     "medium": 500,
     "bold": 700,
-    "black": 900,
-);
+    "black": 900);
 
-@function font-weight($font-weight-style) {
+@function fw($font-weight-style) {
     @return map-get($font-weights, $font-weight-style);
 }
 
+//% ***************    *************** //
 
 
-//% -------  Font Families ------- //
+
+//% ***************  Font-Family  *************** //
 
 $ff-primary: "Lato",
 sans-serif;
-$ff-secondary : Arial,
+$ff-secondary: Arial,
 Helvetica,
 sans-serif;
 
-//& ----------------- ----------------- //
+//% ***************    *************** //
+
+
+//& ********************************  End Of Fonts  ******************************** //
 
 
 
-//& --------------- SHADOWS --------------- //
 
-$shadows :( // 
+//& ********************************  Shadows  ******************************** //
 
-    shadow-sm-1 : 0 .125rem .25rem rgba(color(black-1), .075),
-    shadow-sm-2 : 0 .15rem .28rem rgba(color(black-1), .1),
-    shadow-sm-3 : 0 .2rem .3rem rgba(color(black-1), .12),
+$shadows: ( //
+    sm-1: 0 0.125rem 0.25rem rgba(color(black-1), 0.075),
+    sm-2: 0 0.15rem 0.28rem rgba(color(black-1), 0.1),
+    sm-3: 0 0.2rem 0.3rem rgba(color(black-1), 0.12),
+    rg-1: 0 0.4rem 0.8rem rgba(color(black-1), 0.15),
+    rg-2: 0 0.5rem 1rem rgba(color(black-1), 0.15),
+    rg-3: 0 0.7rem 1.2rem rgba(color(black-1), 0.17),
+    lg-1: 0 1rem 2.5rem rgba(color(black-1), 0.175),
+    lg-2: 0 1rem 3rem rgba(color(black-1), 0.19),
+    lg-3: 0 1.3rem 3rem rgba(color(black-1), 0.2));
 
-
-    shadow-rg-1 : 0 .4rem .8rem rgba(color(black-1), .15),
-    shadow-rg-2 : 0 .5rem 1rem rgba(color(black-1), .15),
-    shadow-rg-3 : 0 .7rem 1.2rem rgba(color(black-1), .17),
-
-
-    shadow-lg-1 : 0 1rem 2.5rem rgba(color(black-1), .175),
-    shadow-lg-2 : 0 1rem 3rem rgba(color(black-1), .19),
-    shadow-lg-3 : 0 1.3rem 3rem rgba(color(black-1), .2),
-
-);
-
-
-@function shadow ($shadow) {
+@function shadow($shadow) {
     @return map-get($shadows, $shadow);
 }
 
-//& ----------------- ----------------- //
+//& ********************************  End Of Shadows  ******************************** //
 
 
 
 
-//& --------------- OTHER --------------- //
+//& ********************************  Other  ******************************** //
 
 $spacing: 2.5px;
-$radius:3px;
-$transition:all .3s ease;
+$radius: 3px;
+$transition: all 0.3s ease;
 $max-width: 1170px;
 
-//& ----------------- ----------------- //
+//& ********************************  End Of Other  ******************************** //
 
 
-//* ------------------------------  ------------------------------ *//
-
-
-
-
-
-//* ------------------------------ Mixins ------------------------------ *//
+//* ***************************************   End of Variables  *************************************** //
 
 
 
-//% ------ General ------ //
 
-// Clearfix
-@mixin clearfix {
 
-    &::after,
-    &::before {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
 
+//* *****************************************   Mixins  ***************************************** //
+
+
+//% ***************  General  *************** //
 
 // Transition
-@mixin transition($time, $function) {
-    transition: all $time $function;
+@mixin transition($property:all, $time:.3s, $function:ease-in-out) {
+    transition: $property $time $function;
 }
 
 
@@ -249,20 +204,47 @@ $max-width: 1170px;
 
 
 // Pseudo element
-@mixin pseudo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: $transition;
+@mixin pseudo ($loc: before, $content: '') {
+    position: relative;
+
+    &::#{$loc} {
+        content: $content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition;
+    }
+
 }
 
-//% ------  ------ //
+
+// Bg-Image
+@mixin bg-image($image) {
+    background-image: url(../img/#{$image});
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+// Darken bg color
+@mixin darkenBgColor ($color) {
+    background-color: $color;
+
+    &:hover,
+    &:active {
+        background-color: darken($color, 6%);
+    }
+}
+
+
+//% ***************    *************** //
 
 
 
-//% --- Center an element --- //
+//% ***************  Centering  *************** //
 
 // Center with position //
 @mixin center-pos {
@@ -277,7 +259,8 @@ $max-width: 1170px;
 // Center with flexbox //
 @mixin center-flex {
     display: flex;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -288,13 +271,14 @@ $max-width: 1170px;
     margin-right: auto;
 }
 
-//% ------  ------ //
+//% ***************    *************** //
 
 
 
-//% ---------- Media Queries ---------- //
+//% ***************  Media Queries  *************** //
 
-//@ ----- All Widths ----- //
+
+//@ ************  All Widths  ************ //
 
 @mixin media-min ($width) {
     @media screen and (min-width:$width) {
@@ -314,19 +298,19 @@ $max-width: 1170px;
     }
 }
 
-//@ -----  ----- //
+//@ ************    ************ //
 
 
 
-//@ ----- Custom Widths ----- //
+//@ ************  Custom Widths  ************ //
 
 $break-points: ( // 
-    "phone-small": 400px,
-    "phone-big": 600px,
-    "tablet-port": 800px,
-    "tablet-land": 1000px,
-    "desktop": 1300px,
-    "desktop-big": 1800px);
+    "phone-small": 40em,
+    "phone-big": 60em,
+    "tablet-port": 80em,
+    "tablet-land": 100em,
+    "desktop": 130em,
+    "desktop-big": 180em);
 
 
 @function break-points($break-point-limit) {
@@ -385,12 +369,13 @@ $break-points: ( //
     }
 }
 
-//@ -----  ----- //
+//@ ************    ************ //
 
 
-//% ----------   ---------- //
+//% ***************    *************** //
 
-//* ------------------------------  ------------------------------ *//
+//* ***************************************  End Of Mixins  *************************************** //
+
 
 
 
@@ -399,20 +384,29 @@ $break-points: ( //
 
 // ----------------------------------- Comments ----------------------------------- //
 
-//* ------------------------------ Header ------------------------------ *//
-//* ------------------------------ End Of Header ------------------------------ *//
+//* ***************************************   Comment  *************************************** //
+//* ***************************************  End Of Comment  *************************************** //
 
-//$ ---------------- Showcase/Hero Section ---------------- $//
-//$ ---------------- End Of Showcase/Hero Section ---------------- $//
 
-//& ---------- Hero ---------- //
-//& ---------- End Of Hero ---------- //
+//& ********************************  Comment  ******************************** //
+//& ********************************  End Of Comment  ******************************** //
 
-//% ------ Hero ------ //
-//% ------ End Of Hero ------ //
 
-//# ---- Hero ---- //
-//# ---- End Of Hero ---- //
+//$ *******************  Comment  ******************* $//
+//$ *******************  End Of Comment  ******************* $//
 
-//^ -- Hero -- //
-//^ -- End Of Hero -- //
+
+//% ***************  Comment  *************** //
+//% ***************  End Of Comment  *************** //
+
+
+//@ ************  Comment  ************ //
+//@ ************  End Of Comment  ************ //
+
+
+//# ********  Comment  ******** //
+//# ********  End Of Comment  ******** //
+
+
+//^ *****  Comment  ***** //
+//^ *****  End Of Comment  ***** //
